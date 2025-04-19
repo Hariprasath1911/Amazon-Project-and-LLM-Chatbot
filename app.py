@@ -18,7 +18,6 @@ def set_background_image_local(image_path):
             background-image: url("data:image/png;base64,{base64_image}");
             background-size: contain;
             background-position: fit;
-            background-repeat: repeat;
             background-attachment: fixed;
         }}     
         </style>

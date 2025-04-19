@@ -27,7 +27,7 @@ retriever = vectorstore.as_retriever()
 # Compatible Hugging Face LLM (must support text generation)
 llm = HuggingFaceHub(
     repo_id="google/flan-t5-base",
-    model_kwargs={"temperature": 0.5, "max_new_tokens": 256}
+    model_kwargs={"temperature": 0.5, "max_new_tokens": 256},
     task="text2text-generation"
 )
 

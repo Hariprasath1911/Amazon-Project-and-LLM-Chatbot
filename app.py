@@ -24,7 +24,7 @@ def set_background(image_file):
         unsafe_allow_html=True
     )
 
-set_background_image_local(r"amazon.png")
+set_background(r"amazon.png")
 # Load local .env (for development)
 load_dotenv()
 

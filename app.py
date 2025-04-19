@@ -10,8 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Read Hugging Face token from environment (works for .env, GitHub Secrets, or Streamlit Secrets)
-hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-
+hf_token = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 # Set it explicitly for HuggingFaceHub to access
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = hf_token
 

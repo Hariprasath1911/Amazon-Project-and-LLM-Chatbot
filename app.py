@@ -26,7 +26,7 @@ retriever = vectorstore.as_retriever()
 
 # Compatible Hugging Face LLM (must support text generation)
 llm = HuggingFaceHub(
-    repo_id="google/flan-t5-base",  # You can also try: mistralai/Mistral-7B-Instruct-v0.1
+    repo_id="mistralai/Mistral-7B-Instruct-v0.1",
     model_kwargs={"temperature": 0.5, "max_new_tokens": 256}
 )
 

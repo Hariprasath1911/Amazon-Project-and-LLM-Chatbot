@@ -1,5 +1,3 @@
-# app.py
-
 import streamlit as st
 from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
@@ -8,11 +6,13 @@ from langchain.llms import HuggingFaceHub
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env
+# Load local .env (for development)
 load_dotenv()
+
+# Read Hugging Face token from environment (works for .env, GitHub Secrets, or Streamlit Secrets)
 hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
-# Set the Hugging Face token for LangChain
+# Set it explicitly for HuggingFaceHub to access
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = hf_token
 
 # Load the FAISS vectorstore
@@ -25,9 +25,9 @@ def load_vectorstore():
 vectorstore = load_vectorstore()
 retriever = vectorstore.as_retriever()
 
-# Use a compatible Hugging Face model
+# Compatible Hugging Face LLM (must support text generation)
 llm = HuggingFaceHub(
-    repo_id="tiiuae/falcon-7b-instruct",  # you can also try mistralai/Mistral-7B-Instruct-v0.1
+    repo_id="tiiuae/falcon-7b-instruct",  # You can also try: mistralai/Mistral-7B-Instruct-v0.1
     model_kwargs={"temperature": 0.5, "max_new_tokens": 256}
 )
 

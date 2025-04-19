@@ -28,6 +28,7 @@ retriever = vectorstore.as_retriever()
 llm = HuggingFaceHub(
     repo_id="google/flan-t5-base",
     model_kwargs={"temperature": 0.5, "max_new_tokens": 256}
+    task="text2text-generation"
 )
 
 qa_chain = RetrievalQA.from_chain_type(llm=llm, retriever=retriever)

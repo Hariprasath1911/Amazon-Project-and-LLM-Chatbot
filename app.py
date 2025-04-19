@@ -19,7 +19,7 @@ os.environ["HUGGINGFACEHUB_API_TOKEN"] = "HUGGING_API_TOKEN"
 @st.cache_resource
 def load_vectorstore():
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    return FAISS.load_local("faiss_store", embeddings)
+    return FAISS.load_local("faiss_store", embeddings,allow_dangerous_deserialization=True)
 
 # Load vectorstore and setup retrieval-based QA chain
 vectorstore = load_vectorstore()

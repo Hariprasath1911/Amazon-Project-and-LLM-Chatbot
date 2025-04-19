@@ -13,7 +13,7 @@ load_dotenv()
 hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
 # Set it explicitly for HuggingFaceHub to access
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = hf_token
 
 # Load the FAISS vectorstore
 @st.cache_resource

@@ -5,7 +5,7 @@ from langchain.chains import RetrievalQA
 from langchain.llms import HuggingFaceHub
 import os
 from dotenv import load_dotenv
-
+st.set_page_config(page_title="Amazon Prime Chatbot", page_icon="🎬")
 # Load local .env (for development)
 load_dotenv()
 
@@ -33,7 +33,6 @@ llm = HuggingFaceHub(
 qa_chain = RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
 
 # Streamlit UI
-st.set_page_config(page_title="Amazon Prime Chatbot", page_icon="🎬")
 st.title("🎬 Amazon Prime Chatbot")
 st.write("Ask me anything about Amazon Prime content!")
 

@@ -26,9 +26,8 @@ retriever = vectorstore.as_retriever()
 
 # Compatible Hugging Face LLM (must support text generation)
 llm = HuggingFaceHub(
-    repo_id="google/flan-t5-base",
+    repo_id="tiiuae/falcon-7b-instruct",
     model_kwargs={"temperature": 0.5, "max_new_tokens": 256},
-    task="text2text-generation"
 )
 
 qa_chain = RetrievalQA.from_chain_type(llm=llm, retriever=retriever)

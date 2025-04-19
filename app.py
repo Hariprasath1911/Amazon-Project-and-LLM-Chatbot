@@ -7,19 +7,18 @@ import os
 from dotenv import load_dotenv
 import base64
 st.set_page_config(page_title="Amazon Prime Chatbot", page_icon="🎬")
-def set_background_image_local(image_path):
-    with open(image_path, "rb") as file:
-        data = file.read()
-    base64_image = base64.b64encode(data).decode("utf-8")
+def set_background(image_file):
+    with open(image_file, "rb") as image:
+        encoded = base64.b64encode(image.read()).decode()
     st.markdown(
         f"""
         <style>
         .stApp {{
-            background-image: url("data:image/png;base64,{base64_image}");
-            background-size: contain;
-            background-position: center;
+            background-image: url("data:image/png;base64,{encoded}");
+            background-size: cover;
+            background-repeat: no-repeat;
             background-attachment: fixed;
-        }}     
+        }}
         </style>
         """,
         unsafe_allow_html=True

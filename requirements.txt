@@ -4,4 +4,3 @@ huggingface_hub==0.20.3
 sentence-transformers
 faiss-cpu
 python-dotenv
--U langchain-community

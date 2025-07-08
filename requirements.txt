@@ -1,6 +1,6 @@
 streamlit
 langchain-community
-huggingface_hub
+huggingface_hub==0.20.3
 sentence-transformers
 faiss-cpu
 python-dotenv
